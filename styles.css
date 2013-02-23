@@ -1,0 +1,277 @@
+body, html {
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	background-color: #97A77C;
+}
+img {
+	display: block;
+	border: 0px;
+}
+td {
+	text-align: left;
+	vertical-align: top;
+}
+a {
+	color: #828282;
+	text-decoration: none;
+	font-weight: bold;
+}
+a:hover, li a:active {
+	color: #A92A05;
+}
+
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	text-align: left;
+	position: relative;
+	background-color: white;
+	background-image: url('img/backg_wrap.png');
+	background-repeat: repeat-y;
+	
+	z-index: 0;
+}
+
+img#seitenbild {
+	width: 176px;
+	height: 268px;
+	display: block;
+	float: left;
+}
+
+/* header */
+
+#header {
+	width: 624px;
+	height: 110px;
+	float: left;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	background-color: white;
+}
+#header h1, #header h2 {
+	position: relative;
+	top: -1000px;
+}
+#header img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 624px;
+	height: 110px;
+}
+
+/* menu */
+
+ul#menu {
+	list-style-type: none;
+	margin: 0px;
+	padding: 30px 0px 0px 34px;
+	width: 590px; /* 624px - padding */
+	height: 16px;
+	float: left;
+	color: #828282;
+	font-size: 11px;
+	font-weight: normal;
+	background-color: white;
+}
+ul#menu li {
+	float: left;
+}
+ul#menu li a {
+	font-size: 11px;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+ul#menu li.current a {
+	color: #A92A05;
+}
+
+/* title */
+
+h1#title {
+	margin: 0px;
+	padding: 62px 0px 0px 227px;
+	float: left;
+	background-color: white;
+	width: 397px; /* 624px - padding */
+	height: 50px; /* 112px - padding */
+}
+h1 {
+	font-size: 19px;
+	font-weight: normal;
+	color: #A92A05;
+	letter-spacing: 1px;
+} 
+
+/* content */
+
+#content {
+	width: 396px; /* 800px - padding */
+	clear: both;
+	padding: 0px 0px 30px 404px;
+}
+#content p, #content ul {
+	width: 350px;
+}
+#content h2 {
+	font-weight: bold;
+	font-size: 13px;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+#content p, #content ul, #content h2, #content table {
+	position: relative;
+	top: -5px;
+}
+#content p, #content td, #content li, #content h2 {
+	line-height: 150%;
+}
+#content ul {
+	margin-left: 0px;
+	padding-left: 20px;
+	margin-top: 0px;
+}
+
+/* bild */
+
+img.bild {
+	width: 176px;
+	height: 176px;
+	display: block;
+	position: absolute;
+	z-index: 1;
+}
+img#bild1 {
+	top: 268px;
+	left: 176px;
+}
+img#bild2 {
+	top: 444px;
+	left: 0px;
+}
+
+/* address */
+
+#address {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	width: 352px;
+	height: 352px;
+	background-image: url('img/backg_spirale_leistungen.png');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+#address a {
+	position: absolute;
+	left: 23px;
+	bottom: 18px;
+	color: white;
+	line-height: 20px;
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+}
+
+/* ######## startseite / index ########## */
+
+#index {
+	background-image: none;
+}
+#index img#seitenbild {
+	height: 445px;
+}
+#index #content {
+	background-image: url('img/backg_content_index.jpg');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	background-color: white;
+	float: left;
+	clear: none;
+	width: 400px; /* 624px - padding */
+	height: 227px; /*  289px - padding */
+	padding: 62px 0px 0px 224px;
+}
+#index #content h1 {
+	margin: 0px 0px 25px 0px;
+}
+#index #address {
+	
+	background-image: url('img/backg_spirale_index.png');
+	width: 800px;
+	height: 155px;
+	top: 445px;
+}
+
+/* ######## philosophie ########## */
+
+#philosophie #address {
+	background-image: url('img/backg_spirale_philosophie.png');
+	height: 303px;
+}
+
+/* ######## leistungen ########## */
+
+#leistungen #address {
+	background-image: url('img/backg_spirale_leistungen.png');
+	height: 342px;
+}
+
+/* ######## vita ########## */
+
+#vita #content {
+	background-image: url('img/backg_spirale_vita.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+#vita #address {
+	background: transparent;
+}
+
+/* ######## sprechzeiten ########## */
+
+#sprechzeiten #content {
+	background-image: url('img/backg_spirale_sprechzeiten.png');
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+#sprechzeiten #address {
+	background: transparent;
+}
+#sprechzeiten table.sprechzeiten {
+	font-weight: bold;
+}
+
+/* ######## standort ########## */
+
+#standort #address {
+	height: 372px;
+}
+#standort #address #lageplan_link {
+	position: absolute;
+	top: 0px;
+	left: 280px;
+	height: 65px;
+	width: 72px;
+	display: block;
+}
+#standort #content {
+	height: 342px; /* 372px - padding */
+}
+
+/* ######## kontakt (impressum) ########## */
+
+#kontakt #address, #impressum #address {
+	background-image: url('img/backg_spirale_kontakt.png');
+	height: 352px;
+}
+#kontakt #content {
+	height: 322px; /* 352px - padding */
+}
