@@ -13,6 +13,7 @@ img {
 td {
 	text-align: left;
 	vertical-align: top;
+	font-size: 13px;
 }
 a {
 	color: #828282;
@@ -245,7 +246,7 @@ img#bild2 {
 #sprechzeiten #address {
 	background: transparent;
 }
-#sprechzeiten table.sprechzeiten {
+#sprechzeiten table.sprechzeiten td {
 	font-weight: bold;
 }
 
