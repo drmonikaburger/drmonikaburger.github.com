@@ -1,0 +1,4 @@
+baseurl: "/drmonikaburger.github.com"
+encoding: "utf-8"
+source: .
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
