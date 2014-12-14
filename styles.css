@@ -246,8 +246,12 @@ img#bild2 {
 #sprechzeiten #address {
 	background: transparent;
 }
-#sprechzeiten table.sprechzeiten td {
+table.sprechzeiten td {
 	font-weight: bold;
+}
+.sprechzeiten--dots {
+	font-weight: normal;
+	margin-right: 10px;
 }
 
 /* ######## standort ########## */
