@@ -28,10 +28,10 @@
 
 	<div id="address">
 		{% if page.show_address %}
-		<a href="kontakt.html" title="zu den restlichen Kontaktdaten">
-			Vennemannstraße 5<br />
-			48157 Münster<br />
-			Telefon 0251-326266
+		<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="kontakt.html" title="zu den restlichen Kontaktdaten">
+			<span itemprop="streetAddress">Vennemannstraße 5</span><br />
+			<span itemprop="postalCode">48157</span> <span itemprop="addressLocality">Münster</span><br />
+			Telefon <span itemprop="telephone">0251-326266</span>
 		</a>
 		{% elsif page.show_lageplan %}
 			<img alt="Lageplan der Praxis Dr. Monika Burger in Münster-Handorf" id="lageplan" src="img/lageplan_dr_monika_burger.png" />
