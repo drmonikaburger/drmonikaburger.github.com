@@ -190,15 +190,12 @@ img#bild2 {
 	height: 445px;
 }
 #index #content {
-	background-image: url('img/backg_content_index.jpg');
-	background-repeat: no-repeat;
-	background-position: bottom left;
 	background-color: white;
 	float: left;
 	clear: none;
 	width: 400px; /* 624px - padding */
 	height: 227px; /*  289px - padding */
-	padding: 62px 0px 0px 224px;
+	padding: 62px 100px 0px 124px;
 }
 #index #content h1 {
 	margin: 0px 0px 25px 0px;
