@@ -1,8 +1,8 @@
 {% include head.html %}
-<div class="wrap" id="{{ page.id }}">
-	<img id="seitenbild" alt="" src="img/seitenbild_{{ page.id }}.jpg" />
+<div class="wrap {{ page.id }}">
+	<img class="seitenbild" alt="" src="img/seitenbild_{{ page.id }}.jpg" />
 
-	<a id="header" href="index.html" title="zur Startseite">
+	<a class="header" href="index.html" title="zur Startseite">
 		<h1>Dr. med. Monika Burger</h1>
 		<h2>Ärztin für Gynäkologie &amp; Psychotherapie</h2>
 		<img alt="Dr. med. Monika Burger Ärztin für Gynäkologie &amp; Psychotherapie" src="img/backg_header.png" />
@@ -11,22 +11,22 @@
 	{% include menu.html %}
 
   {% if page.h1 %}
-	  <h1 id="title">{{ page.h1 }}</h1>
+	  <h1 class="title">{{ page.h1 }}</h1>
 	{% endif %}
 
-	<div id="content">
+	<div class="content">
 		{{ content }}
 	</div>
 
   {% if page.bild1 %}
-    <img src="img/{{ page.bild1 }}" alt="" id="bild1" class="bild">
+    <img src="img/{{ page.bild1 }}" alt="" class="bild1 bild">
 	{% endif %}
 
   {% if page.bild2 %}
-    <img src="img/{{ page.bild2 }}" alt="" id="bild2" class="bild">
+    <img src="img/{{ page.bild2 }}" alt="" class="bild2 bild">
 	{% endif %}
 
-	<div id="address">
+	<div class="address">
 		{% if page.show_address %}
 		<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="kontakt.html" title="zu den restlichen Kontaktdaten">
 			<span itemprop="streetAddress">Vennemannstraße 5</span><br />
@@ -34,8 +34,8 @@
 			Telefon <span itemprop="telephone">0251-326266</span>
 		</a>
 		{% elsif page.show_lageplan %}
-			<img alt="Lageplan der Praxis Dr. Monika Burger in Münster-Handorf" id="lageplan" src="img/lageplan_dr_monika_burger.png" />
-			<a id="lageplan_link" href="lageplan_popup.html" target="_blank" title="Größere Version des Lageplans anzeigen"></a>
+			<img alt="Lageplan der Praxis Dr. Monika Burger in Münster-Handorf" id="lageplan" class="lageplan" src="img/lageplan_dr_monika_burger.png" />
+			<a id="lageplan_link" class="lageplan_link" href="lageplan_popup.html" target="_blank" title="Größere Version des Lageplans anzeigen"></a>
 		{% endif %}
 	</div>
 </div>

@@ -1,6 +1,8 @@
 ---
 ---
 
+@import 'vendor/rem'
+
 // colors
 
 $light-green: #97A77C
@@ -14,15 +16,30 @@ $wrap-width: 800px
 $content-width: 624px
 $sidebar-width: 176px
 
-$base-font-size: 13px
+$mobile: "(max-width: 799px)"
+$desktop: "(min-width: 800px)"
+
+$rem-baseline: 14.5px
+$headline-font-size: 19px
+$small-font-size: 11px
+$padding: 20px
+
+html
+  box-sizing: border-box
+
+*, *:before, *:after
+  box-sizing: inherit
 
 body, html
   padding: 0px
   margin: 0px
   text-align: center
   font-family: Arial, Helvetica, sans-serif
-  font-size: $base-font-size
   background-color: $light-green
+  +rem-baseline
+
+  @media #{$mobile}
+    +rem-baseline(110%)
 
 img
   display: block
@@ -31,7 +48,6 @@ img
 td
   text-align: left
   vertical-align: top
-  font-size: $base-font-size
 
 a
   color: #828282
@@ -53,17 +69,24 @@ a:hover, li a:active
   background-repeat: repeat-y
   z-index: 0
 
+  @media #{$mobile}
+    width: 100%
+    background-image: none
 
-img#seitenbild
-  width: 176px
+
+img.seitenbild
+  width: $sidebar-width
   height: 268px
   display: block
   float: left
 
+  @media #{$mobile}
+    display: none
+
 
 /* header */
 
-#header
+.header
   width: $content-width
   height: 110px
   float: left
@@ -72,76 +95,113 @@ img#seitenbild
   text-decoration: none
   background-color: $white
 
-#header h1, #header h2
-  position: relative
-  top: -1000px
+  @media #{$mobile}
+    width: 100%
+    height: auto
+    margin-bottom: $padding
 
-#header img
-  position: absolute
-  top: 0px
-  left: 0px
-  width: $content-width
-  height: 110px
+  h1, h2
+    position: relative
+    top: -1000px
+
+    @media #{$mobile}
+      display: none
+
+  img
+    position: absolute
+    top: 0px
+    left: 0px
+    width: $content-width
+    height: 110px
+
+    @media #{$mobile}
+      width: 100%
+      height: auto
+      position: relative
 
 
 /* menu */
 
-ul#menu
+ul.menu
   list-style-type: none
   margin: 0px
   padding: 30px 0px 0px 34px
-  width: $content-width - 30px - 34px
-  height: 16px
+  width: $content-width
+  height: 46px
   float: left
   color: #828282
-  font-size: 11px
   font-weight: normal
   background-color: $white
 
-ul#menu li
-  float: left
+  @media #{$mobile}
+    width: 100%
+    height: auto
+    padding: $padding
+    padding-bottom: $padding/2
+    background-color: rgba($dark-orange, .1)
 
-ul#menu li a
-  font-size: 11px
-  font-weight: normal
-  letter-spacing: 1px
+  li
+    float: left
+    margin-bottom: $padding/2
 
-ul#menu li.current a
-  color: $highlight-color
+    a
+      font-weight: normal
+      letter-spacing: 1px
+      +rem(font-size, $small-font-size)
+
+      @media #{$mobile}
+        +rem(font-size, $rem-baseline)
+
+    &.current a
+      color: $highlight-color
 
 
 /* title */
 
-h1#title
+h1.title
   margin: 0px
   padding: 62px 0px 0px 227px
   float: left
   background-color: $white
-  width: $content-width - 227px
-  height: 50px /* 112px - padding */
+  width: $content-width
+  height: 112px
+
+  @media #{$mobile}
+    width: 100%
+    padding: $padding
+    padding-bottom: 0
+    height: auto
 
 h1
-  font-size: 19px
   font-weight: normal
   color: #A92A05
   letter-spacing: 1px
+  +rem(font-size, $headline-font-size)
 
 
 /* content */
 
-#content
-  width: 396px /* 800px - padding */
+.content
+  width: $wrap-width
   clear: both
   padding: 0px 0px 30px 404px
+
+  @media #{$mobile}
+    width: 100%
+    padding: $padding
 
   p, ul
     width: 350px
 
+    @media #{$mobile}
+      width: auto
+      max-width: 500px
+
   h2
     font-weight: bold
-    font-size: 13px
     margin-top: 0px
     padding-top: 0px
+    +rem(font-size, $rem-baseline)
 
   p, ul,  h2,  table
     position: relative
@@ -159,24 +219,38 @@ h1
 /* bild */
 
 img.bild
-  width: 176px
+  width: $sidebar-width
   height: 176px
   display: block
   position: absolute
   z-index: 1
 
-img#bild1
+  @media #{$mobile}
+    position: relative
+    padding-left: $padding
+    padding-bottom: $padding
+    float: left
+
+img.bild1
   top: 268px
   left: 176px
 
-img#bild2
+  @media #{$mobile}
+    top: 0
+    left: 0
+
+img.bild2
   top: 444px
   left: 0px
+
+  @media #{$mobile}
+    top: 0
+    left: 0
 
 
 /* address */
 
-#address
+.address
   position: absolute
   left: 0px
   bottom: 0px
@@ -186,79 +260,109 @@ img#bild2
   background-repeat: no-repeat
   background-position: bottom left
 
-#address a
-  position: absolute
-  left: 23px
-  bottom: 18px
-  color: $white
-  line-height: 20px
-  text-decoration: none
-  font-weight: normal
-  font-size: 12px
-  letter-spacing: 0.5px
+  @media #{$mobile}
+    width: 100%
+    height: 150px
+    position: relative
+    background-repeat: repeat-x
+    clear: both
+
+  a
+    position: absolute
+    left: 23px
+    bottom: 18px
+    color: $white
+    line-height: 20px
+    text-decoration: none
+    font-weight: normal
+    letter-spacing: 0.5px
 
 
-/* ######## startseite / index ########## */
+/* -------- startseite / index -------- */
 
-#index
+.index
   background-image: none
 
-  img#seitenbild
+  img.seitenbild
     height: 445px
 
-  #content
+  .content
     background-color: $white
     float: left
     clear: none
-    width: 400px /* 624px - padding */
-    height: 227px /*  289px - padding */
+    height: 289px
     padding: 62px 100px 0px 124px
+
+    @media #{$mobile}
+      padding: $padding
+      float: none
+      clear: both
 
     h1
       margin: 0px 0px 25px 0px
 
-  #address
+  .address
     background-image: url('img/backg_spirale_index.png')
     width: 800px
     height: 155px
     top: 445px
 
+    @media #{$mobile}
+      width: 100%
+      height: 150px
+      top: auto
 
-/* ######## philosophie ########## */
 
-#philosophie #address
+/* -------- philosophie -------- */
+
+.praxis .address
   background-image: url('img/backg_spirale_philosophie.png')
   height: 303px
 
+  @media #{$mobile}
+    height: 150px
 
-/* ######## leistungen ########## */
 
-#leistungen #address
+/* -------- leistungen -------- */
+
+.leistungen .address
   background-image: url('img/backg_spirale_leistungen.png')
   height: 342px
 
+  @media #{$mobile}
+    height: 150px
 
-/* ######## vita ########## */
 
-#vita
-  #content
+/* -------- vita -------- */
+
+.vita
+  .content
     background-image: url('img/backg_spirale_vita.png')
     background-repeat: no-repeat
     background-position: top left
 
-  #address
-    background: transparent
+    @media #{$mobile}
+      background-image: none
+
+  @media #{$desktop}
+    .address
+      background: transparent
 
 
-/* ######## sprechzeiten ########## */
+/* -------- sprechzeiten -------- */
 
-#sprechzeiten #content
-  background-image: url('img/backg_spirale_sprechzeiten.png')
-  background-repeat: no-repeat
-  background-position: top left
+.sprechzeiten
+  .content
+    background-image: url('img/backg_spirale_sprechzeiten.png')
+    background-repeat: no-repeat
+    background-position: top left
 
-#sprechzeiten #address
-  background: transparent
+    @media #{$mobile}
+      background-image: none
+
+  @media #{$desktop}
+    .address
+      background: transparent
 
 table.sprechzeiten td
   font-weight: bold
@@ -268,29 +372,48 @@ table.sprechzeiten td
   margin-right: 10px
 
 
-/* ######## standort ########## */
+/* -------- standort -------- */
 
-#standort #address
-  height: 372px
+.standort
+  .address
+    height: 372px
 
-#standort #address #lageplan_link
-  position: absolute
-  top: 0px
-  left: 280px
-  height: 65px
-  width: 72px
-  display: block
+    .lageplan_link
+      position: absolute
+      top: 0px
+      left: 280px
+      height: 65px
+      width: 72px
+      display: block
 
-#standort #content
-  height: 342px /* 372px - padding */
+      @media #{$mobile}
+        display: none
+
+    @media #{$mobile}
+      height: 150px
+
+      .lageplan
+        display: none
+
+  .mobile_lageplan
+    width: 100%
+    max-width: 500px
+    @media #{$desktop}
+      display: none
+
+  .content
+    height: 372px
+
+    @media #{$mobile}
+      height: auto
 
 
-/* ######## kontakt (impressum) ########## */
+/* -------- kontakt (impressum) -------- */
 
-#kontakt #address, #impressum #address
-  background-image: url('img/backg_spirale_kontakt.png')
-  height: 352px
+.kontakt
+  .address
+    background-image: url('img/backg_spirale_kontakt.png')
 
-#kontakt #content
-  height: 322px /* 352px - padding */
+  .content
+    height: 352px
 
