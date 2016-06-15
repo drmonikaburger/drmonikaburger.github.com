@@ -1,4 +1,6 @@
-baseurl: "/drmonikaburger.github.com"
 encoding: "utf-8"
-source: .
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock']
+title: "Gemeinschaftspraxis - Frauenärztinnen Dr. med. Monika Burger & Julia Gantert - Münster-Handorf"
+email: gyn-handorf@web.de
+description: Gemeinschaftspraxis für Gynäkologie & Psychotherapie von Frauenärztinnen Dr. med. Monika Burger & Julia Gantert in Münster-Handorf
+url: "http://frauenaerztinnen-muenster-handorf.de"

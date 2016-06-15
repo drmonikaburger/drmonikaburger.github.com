@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head_new.html %}
+
+  <body>
+
+    {% include header_new.html %}
+
+    {% include nav_new.html %}
+
+    <img class="main-image" src="img/main_{{page.key}}.jpg" />
+
+    <div class="page-content">
+      {{ content }}
+    </div>
+
+  </body>
+
+</html>
