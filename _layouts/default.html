@@ -1,42 +1,20 @@
-{% include head.html %}
-<div class="wrap {{ page.id }}">
-	<img class="seitenbild" alt="" src="img/seitenbild_{{ page.id }}.jpg" />
+<!DOCTYPE html>
+<html>
 
-	<a class="header" href="index.html" title="zur Startseite">
-		<h1>Dr. med. Monika Burger</h1>
-		<h2>Ärztin für Gynäkologie &amp; Psychotherapie</h2>
-		<img alt="Dr. med. Monika Burger Ärztin für Gynäkologie &amp; Psychotherapie" src="img/backg_header.png" />
-	</a>
+  {% include head.html %}
 
-	{% include menu.html %}
+  <body>
 
-  {% if page.h1 %}
-	  <h1 class="title">{{ page.h1 }}</h1>
-	{% endif %}
+    {% include header.html %}
 
-	<div class="content">
-		{{ content }}
-	</div>
+    {% include nav.html %}
 
-  {% if page.bild1 %}
-    <img src="img/{{ page.bild1 }}" alt="" class="bild1 bild">
-	{% endif %}
+    <img class="main-image" src="/images/main_{{page.key}}.jpg" />
 
-  {% if page.bild2 %}
-    <img src="img/{{ page.bild2 }}" alt="" class="bild2 bild">
-	{% endif %}
+    <div class="page-content">
+      {{ content }}
+    </div>
 
-	<div class="address">
-		{% if page.show_address %}
-		<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="kontakt.html" title="zu den restlichen Kontaktdaten">
-			<span itemprop="streetAddress">Petronillaplatz 10</span><br />
-			<span itemprop="postalCode">48157</span> <span itemprop="addressLocality">Münster</span><br />
-			Telefon <span itemprop="telephone">0251-326266</span>
-		</a>
-		{% elsif page.show_lageplan %}
-			<img alt="Lageplan der Praxis Dr. Monika Burger in Münster-Handorf" id="lageplan" class="lageplan" src="img/lageplan_dr_monika_burger.png" />
-			<a id="lageplan_link" class="lageplan_link" href="lageplan_popup.html" target="_blank" title="Größere Version des Lageplans anzeigen"></a>
-		{% endif %}
-	</div>
-</div>
-{% include foot.html %}
+  </body>
+
+</html>
