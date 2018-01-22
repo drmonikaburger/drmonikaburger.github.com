@@ -119,6 +119,7 @@ header {
   white-space: nowrap;
   overflow: hidden;
   font-size: .8rem;
+  pointer-events: none;
   @include media-query($medium) {
     font-size: 1rem;
     width: 173px;
