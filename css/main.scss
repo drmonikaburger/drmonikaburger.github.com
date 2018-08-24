@@ -41,8 +41,8 @@ $sidebar-width: 256px;
 $gutter: 9px;
 
 // breakpoints
-$medium: 600px;
-$desktop: $main-width + $sidebar-width + $gutter;
+$medium-width: 600px;
+$desktop-width: $main-width + $sidebar-width + $gutter;
 
 @mixin media-query($device) {
     @media screen and (min-width: $device) {
@@ -77,11 +77,17 @@ a {
 
 body {
   position: relative;
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     background-image: url(/images/background_spirale.png);
     background-repeat: no-repeat;
     background-position: right top;
   }
+}
+
+hr {
+  border: 0px solid $background-color;
+  border-top-width: 1px;
+  margin-bottom: 1.5rem;
 }
 
 // utils
@@ -100,7 +106,7 @@ body {
 header {
   position: relative;
   width: 100%;
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     width: 787px;
     height: 277px;
   }
@@ -109,7 +115,7 @@ header {
 .header__logo {
   display: block;
   width: 100%;
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     width: 787px;
     height: 277px;
   }
@@ -127,13 +133,13 @@ header {
   overflow: hidden;
   font-size: .8rem;
   pointer-events: none;
-  @include media-query($medium) {
+  @include media-query($medium-width) {
     font-size: 1rem;
     width: 173px;
     bottom: .75rem;
   }
-  @include media-query($desktop) {
-    left: $desktop - 173px;
+  @include media-query($desktop-width) {
+    left: $desktop-width - 173px;
   }
 }
 
@@ -151,11 +157,11 @@ header {
     }
   }
 
-  @include media-query($medium) {
+  @include media-query($medium-width) {
     padding: 2rem;
   }
 
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     width: $sidebar-width;
     position: absolute;
     padding-left: 80px;
@@ -176,7 +182,7 @@ header {
 }
 
 .main-image, .page-content {
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     margin-left: $sidebar-width + $gutter;
   }
 }
@@ -185,7 +191,7 @@ header {
   width: 100%;
   display: block;
 
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     width: $main-width;
     height: 380px;
   }
@@ -195,7 +201,7 @@ header {
   padding: 1.5rem;
   padding-top: 0;
 
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     padding: 2rem;
     width: $main-width;
     padding-right: 0px;
@@ -204,7 +210,7 @@ header {
 
 .page-content {
   p, ul {
-    max-width: 600px;
+    max-width: $medium-width;
     margin-top: 0px;
   }
 
@@ -235,11 +241,8 @@ header {
     font-weight: bold;
     margin-bottom: .2rem;
   }
-
-  hr {
-    border: 0px solid $background-color;
-    border-top-width: 1px;
-    margin-bottom: 1.5rem;
+  h1, h2, h3 {
+    max-width: $medium-width;
   }
 
   img {
@@ -288,10 +291,10 @@ header {
   margin-bottom: 1rem;
 
   @include media-query(660px) {
-    width: 600px;
+    width: $medium-width;
   }
 
-  @include media-query($desktop) {
+  @include media-query($desktop-width) {
     width: 413px;
     height: 380px;
     position: absolute;
@@ -301,5 +304,18 @@ header {
 
   a {
     text-transform: none;
+  }
+}
+
+.secondary-link {
+  text-transform: none;
+}
+
+.footer {
+  padding: 10px;
+  border-top: 1px solid $background-color;
+
+  > a {
+    color: $red;
   }
 }
