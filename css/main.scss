@@ -23,8 +23,6 @@ $grey: #e9e5dc;
 $text-color: $black;
 $light-text-color: $white;
 $background-color: $red;
-$google-maps-background-color: $grey;
-
 
 // --- dimensions ----
 
@@ -275,10 +273,9 @@ header {
   }
 }
 
-.google-map {
+.anfahrt-map {
   width: 100%;
   height: 450px;
-  background-color: $google-maps-background-color;
   margin-bottom: 1rem;
 
   @include media-query(660px) {
@@ -291,5 +288,9 @@ header {
     position: absolute;
     top: 277px;
     left: 852px;
+  }
+
+  a {
+    text-transform: none;
   }
 }

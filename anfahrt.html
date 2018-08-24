@@ -5,7 +5,20 @@ key: "anfahrt"
 
 <h1>Ihr Weg zu uns</h1>
 
-<iframe class="google-map" frameborder="0" style="border:0" allowfullscreen src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBiYR3_lIp79KPAdJVrcqZ6wfO068LogDg&q=Frau+Dr.+med.+Monika+Burger"></iframe>
+<div id="anfahrt-map" class="anfahrt-map"></div>
+<link rel="stylesheet" href="{{ "/css/leaflet.css" | prepend: site.baseurl }}">
+<script src="javascript/leaflet.js"></script>
+<script>
+  var anfahrt = L.map('anfahrt-map').setView([51.9874888, 7.697994], 14);
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamFrb2JoaWxkZW4iLCJhIjoiY2psN256ZmtlMDZ4NTNrbXQ4cDRwMWV2aiJ9.KSpj0HrUlOAodd6iLB395Q', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiamFrb2JoaWxkZW4iLCJhIjoiY2psN256ZmtlMDZ4NTNrbXQ4cDRwMWV2aiJ9.KSpj0HrUlOAodd6iLB395Q'
+  }).addTo(anfahrt);
+  var praxis = L.marker([51.9874888, 7.697994]).addTo(anfahrt);
+  praxis.bindPopup("<strong>Gemeinschaftspraxis - Drs. med. Monika Burger & Julia Gantert</strong><br />Petronillaplatz 10<br />48157 Münster-Handorf<br /><a href='https://goo.gl/maps/D8aUohBhNFQ2' target='_blank'>In Google Maps öffnen</a>").openPopup();
+</script>
 
 <p><strong>Petronillaplatz 10 · 48157 Münster-Handorf</strong></p>
 
