@@ -315,6 +315,10 @@ header {
   padding: 10px;
   border-top: 1px solid $background-color;
 
+  @include media-query($desktop-width) {
+    margin-left: $sidebar-width;
+  }
+
   > a {
     color: $red;
   }
